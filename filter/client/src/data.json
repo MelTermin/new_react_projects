@@ -1,0 +1,102 @@
+
+{
+  "users": [
+    {
+    "id": 1,
+    "name": "John",
+    "email": "john@gmail.com",
+    "phone":"8549085403",
+    "address":"UK",
+    "status":"Active"
+    },
+    {
+      "id": 2,
+      "name": "Selin",
+      "email": "selin@gmail.com",
+      "phone":"432543543",
+      "address":"Turkey",
+      "status":"Inactive"
+    },
+    {
+      "id": 3,
+      "name": "Melissa",
+      "email": "melissa@gmail.com",
+      "phone":"4325443",
+      "address":"Israel",
+      "status":"Active"
+    },
+    {
+      "id": 4,
+      "name": "Daniel",
+      "email": "daniel@gmail.com",
+      "phone":"9342543",
+      "address":"Israel",
+      "status":"Active"
+    },
+    {
+      "id": 5,
+      "name": "Kaan",
+      "email": "kaan@gmail.com",
+      "phone":"93425433232",
+      "address":"Denmark",
+      "status":"Active"
+    },
+    {
+      "id": 6,
+      "name": "Ceni",
+      "email": "ceni@gmail.com",
+      "phone":"93425433232",
+      "address":"Portugal",
+      "status":"Inactive"
+    },
+    {
+      "id": 7,
+      "name": "Eli",
+      "email": "eli@gmail.com",
+      "phone":"93425433232",
+      "address":"Portugal",
+      "status":"Inactive"
+    },
+    {
+      "id": 8,
+      "name": "Natasha",
+      "email": "natasha@gmail.com",
+      "phone":"432533232",
+      "address":"UK",
+      "status":"Active"
+    },
+    {
+      "id": 9,
+      "name": "Micaela",
+      "email": "micaela@gmail.com",
+      "phone":"432533232",
+      "address":"Brazil",
+      "status":"Active"
+    },
+    {
+      "id": 10,
+      "name": "Mia",
+      "email": "mia@gmail.com",
+      "phone":"43232132",
+      "address":"Turkey",
+      "status":"Inactive"
+    },
+    {
+      "id": 11,
+      "name": "Jasmin",
+      "email": "jasmin@gmail.com",
+      "phone":"4324132",
+      "address":"Israel",
+      "status":"Inactive"
+    },
+    {
+      "id": 12,
+      "name": "Berk",
+      "email": "berk@gmail.com",
+      "phone":"4324132",
+      "address":"Israel",
+      "status":"Inactive"
+    }
+
+  ]
+}

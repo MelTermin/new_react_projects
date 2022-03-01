@@ -1,0 +1,29 @@
+form {
+  margin:auto;
+  padding:"15px";
+  max-width: 400px;
+  align-content: center;
+}
+
+h2 {
+  text-align: center;
+  margin:10px;
+}
+
+.option {
+
+ margin: 50px 445px;
+}
+
+select {
+  width:80%;
+  border-radius: 2px;
+  height: 35px;
+  
+}
+.pages-container {
+  margin: auto;
+  padding:15px;
+  max-width: 250px;
+  align-content: center;
+}
