@@ -8,11 +8,15 @@ function Search() {
   const searchCocktail= (e) => {
     setSearchTerm(e.target.value)
   }
+  const handleSubmit= (e) => {
+    e.preventDefault() 
+
+  }
   
   return (
     <div className='search-container'>
       <h3>Search Your Favourite Cocktail</h3>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input type="text" placeholder='Search your cocktail' value={searchTerm} onChange={searchCocktail}/>
       </form>
 

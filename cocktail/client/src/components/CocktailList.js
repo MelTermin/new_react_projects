@@ -15,7 +15,7 @@ function CocktailList() {
 
   if(cocktails.length<1) {
     return(
-      <h3>No cocktails matched your search</h3>
+      <h3 style={{textAlign:"center", marginLeft:"90px"}}>No cocktails matched your search</h3>
     )
   }
 

@@ -104,3 +104,56 @@ img {
   height: 175px;
   border-radius: 100%;
 }
+
+
+.drink {
+  width: 85vw;
+  max-width:  40rem;
+  margin: 0 auto;
+
+
+  display:flex;
+  justify-content: space-evenly;
+
+}
+.drink img {
+  border-radius: 5px;
+ 
+}
+.drink p {
+  font-weight: bold;
+  text-transform: capitalize;
+  line-height: 1.8;
+  margin-left:50px;
+}
+.drink span {
+  margin-right: 0.5rem;
+}
+.drink-data {
+  background: #7058d6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  color: #f2f2f7;
+}
+
+
+.btn-detail {
+  
+  margin:40px 650px;
+  background-color: #7058d6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  color: black;
+
+  text-transform: uppercase;
+ 
+  border:none;
+  padding: 0.45rem 0.8rem;
+  display: inline-block;
+ 
+  cursor: pointer;
+  font-size: 0.8rem;
+  background: transparent;
+  border-radius:5px;
+  
+}
