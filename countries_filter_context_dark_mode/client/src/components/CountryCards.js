@@ -1,11 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useNavigate } from "react-router-dom";
 
 function CountryCards({name,flag, region,population,capital}) {
   let navigate = useNavigate();
   
   const handleDetail= () => {
-    navigate(`/country/${name}`)
+    navigate(`/country/${name}`) 
   }
   return (
     <div className='card-wrapper' onClick={handleDetail}>

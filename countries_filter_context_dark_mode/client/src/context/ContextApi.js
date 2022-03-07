@@ -5,7 +5,8 @@ const CountriesContext = createContext()
 
 export const CountriesProvider = ({children}) => {
   const [countries, setCountries]=useState([]);
-  const [loading, setLoading]=useState(true)
+  const [loading, setLoading]=useState(true);
+ 
 
   useEffect(()=> {
     fetchCountries();
@@ -30,7 +31,13 @@ export const CountriesProvider = ({children}) => {
             flag,
             region,
             population,
-            capital
+            capital, 
+            subregion,
+            currencies,
+            languages,
+            borders,
+            topLevelDomain,
+            nativeName
 
           }=item
           return {
@@ -39,7 +46,13 @@ export const CountriesProvider = ({children}) => {
             flag,
             region,
             population,
-            capital
+            capital,
+            subregion,
+            currencies,
+            languages,
+            borders,
+            topLevelDomain,
+            nativeName
           }
         })
         setCountries(newCountries)
