@@ -32,7 +32,7 @@ function Search() {
       <input type="text" placeholder='Search for a country' value={searchTerm}
       onChange={handleChange}/>
       <select onChange={handleChangeOption}>
-        <option>Please select value</option>
+        
         {regions.map((item,index)=>{
           return(
             

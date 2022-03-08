@@ -19,7 +19,13 @@ function Detail() {
     })
 
     const borderCode= details.map((item)=> {
-      return item.borders.join(',')
+    
+      if(item.borders) {
+        return item.borders.join(',')
+      }else {
+        return setBorders(null)
+      }
+      
     })
 
 
@@ -81,33 +87,21 @@ const handleGoBack= ()=> {
                   </p>
               <div className='border-countries-wrapper'>
                 <span>Border Countries: </span>
-                  {offical ? (<>
-                  {offical.map((item,index)=> {
-                  return(
-                    <div key={index}>
-                      <Link to={`/country/${item.name}`}>
-                        <button>{item.name}</button>
-                      </Link>
-                    </div>
+                  {offical ? (
+                  <>
+                      {offical.map((item,index)=> {
+                      return(
+                        <div key={index}>
+                          <Link to={`/country/${item.name}`}>
+                            <button>{item.name}</button>
+                          </Link>
+                        </div>
 
-                     
-                    
-                  )
-                })}
-                  </>) :(<span>Doesn't share border with anyone</span>)}
-                
-                {/* {offical.map((item,index)=> {
-                  return(
-                    <div key={index}>
-                      <Link to={`/country/${item.name}`}>
-                        <button>{item.name}</button>
-                      </Link>
-                    </div>
-
-                     
-                    
-                  )
-                })} */}
+                        
+                        
+                      )
+                    })}
+                  </>) :(<small>Doesn't share border with anyone</small>)}
               </div>
             </div>
            
