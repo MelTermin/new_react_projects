@@ -1,17 +1,17 @@
 import React,{useState,useEffect,useContext} from 'react'
-import { useParams} from "react-router-dom";
+import { useParams,Link, useNavigate} from "react-router-dom";
 import CountriesContext from "../context/ContextApi"
 
 function Detail() {
   const {name} = useParams();
+  let navigate = useNavigate();
 
   const {countries}=useContext(CountriesContext)
   const [singleCountry, setSingleCountry]=useState([]);
   const [borders,setBorders]=useState([])
+  const[offical,setOffical]=useState([])
 
-  
-  
-
+ 
   const getSingleCountry= async () => {
 
    const details= countries.filter((item)=> {
@@ -19,8 +19,10 @@ function Detail() {
     })
 
     const borderCode= details.map((item)=> {
-      return item.borders
+      return item.borders.join(',')
     })
+
+
 
     setSingleCountry(details)
     setBorders(borderCode)
@@ -31,14 +33,32 @@ function Detail() {
    
   },[name,countries])
 
-  
+  useEffect(() => {
+    async function fetchData() {
+      if(borders[0]) {
 
 
+        const bDataFetched = await fetch(`https://restcountries.com/v2/alpha?codes=${borders[0]}`);
+        const bData = await bDataFetched.json();
+        console.log(bData)
+        setOffical(bData)
+
+      }
+      
+    }
+    fetchData();
+  }, [borders]);
+
+
+
+const handleGoBack= ()=> {
+  navigate("/")
+}
 
 
   return (
     <div className='detail-wrapper'>
-      <button>Go Back</button>
+      <button onClick={handleGoBack}>Go Back</button>
       {singleCountry.map((country)=> {
         return(
           <div key={country.id}>
@@ -61,6 +81,18 @@ function Detail() {
                   </p>
               <div className='border-countries-wrapper'>
                 <span>Border Countries: </span>
+                {offical.map((item,index)=> {
+                  return(
+                    <div key={index}>
+                      <Link to={`/country/${item.name}`}>
+                        <button>{item.name}</button>
+                      </Link>
+                    </div>
+
+                     
+                    
+                  )
+                })}
               </div>
             </div>
            
