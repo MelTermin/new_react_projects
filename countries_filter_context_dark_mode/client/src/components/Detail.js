@@ -58,13 +58,13 @@ const handleGoBack= ()=> {
 
   return (
     <div className='detail-wrapper'>
-      <button onClick={handleGoBack}>Go Back</button>
+      <button className='btn-back' onClick={handleGoBack}>Go Back</button>
       {singleCountry.map((country)=> {
         return(
-          <div key={country.id}>
-            <div className='image-flag'>
-              <img src={country.flag} alt={country.name}/>
-            </div>
+          <div key={country.id} className='detail-country'>
+           
+            <img className='image-flag' src={country.flag} alt={country.name}/>
+            
             <div className='other-details'>
               <h3>{country.name}</h3>
               <p><span>Native Name: </span>{country.nativeName}</p>
@@ -81,7 +81,8 @@ const handleGoBack= ()=> {
                   </p>
               <div className='border-countries-wrapper'>
                 <span>Border Countries: </span>
-                {offical.map((item,index)=> {
+                  {offical ? (<>
+                  {offical.map((item,index)=> {
                   return(
                     <div key={index}>
                       <Link to={`/country/${item.name}`}>
@@ -93,6 +94,20 @@ const handleGoBack= ()=> {
                     
                   )
                 })}
+                  </>) :(<span>Doesn't share border with anyone</span>)}
+                
+                {/* {offical.map((item,index)=> {
+                  return(
+                    <div key={index}>
+                      <Link to={`/country/${item.name}`}>
+                        <button>{item.name}</button>
+                      </Link>
+                    </div>
+
+                     
+                    
+                  )
+                })} */}
               </div>
             </div>
            

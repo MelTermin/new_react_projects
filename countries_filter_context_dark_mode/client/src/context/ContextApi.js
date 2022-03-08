@@ -6,11 +6,10 @@ const CountriesContext = createContext()
 export const CountriesProvider = ({children}) => {
   const [countries, setCountries]=useState([]);
   const [loading, setLoading]=useState(true);
+  const [searchTerm, setSearchTerm]=useState('')
  
 
-  useEffect(()=> {
-    fetchCountries();
-  },[])
+
 
   const fetchCountries = async() => {
     setLoading(true);
@@ -56,6 +55,7 @@ export const CountriesProvider = ({children}) => {
           }
         })
         setCountries(newCountries)
+        setLoading(false)
       }
 
     } catch(error) {
@@ -65,10 +65,18 @@ export const CountriesProvider = ({children}) => {
 
   }
 
+  useEffect(()=> {
+    fetchCountries();
+  },[])
+
+  const searchCountries = countries.filter((country) =>
+  country.name.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
 
 
   return (
-    <CountriesContext.Provider value={{countries}}>
+    <CountriesContext.Provider value={{countries,loading,setLoading,searchTerm,setSearchTerm,searchCountries,setCountries}}>
 
       {children}
     </CountriesContext.Provider>

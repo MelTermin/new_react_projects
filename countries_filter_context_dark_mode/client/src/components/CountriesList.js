@@ -3,17 +3,25 @@ import CountryCards from './CountryCards'
 import CountriesContext from "../context/ContextApi"
 
 function CountriesList() {
-  const {countries}=useContext(CountriesContext)
+  const {countries,searchCountries,searchTerm}=useContext(CountriesContext)
 
  
   return (
     
     <div className='countries-list-wrapper'>
-      {countries.map((item)=> {
+      {searchTerm ? (searchCountries.map((item,index)=> {
         return (
-          <CountryCards key={item.id} {...item}/>
+          <CountryCards key={index} {...item}/>
         )
-      })}
+      })
+      ):(
+        countries.map((item,index)=> {
+          return (
+            <CountryCards key={index} {...item}/>
+          )
+        })
+      )}
+      
     </div>
   )
 }
