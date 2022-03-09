@@ -91,9 +91,9 @@ const handleGoBack= ()=> {
                   <>
                       {offical.map((item,index)=> {
                       return(
-                        <div key={index}>
+                        <div key={index} className='border-wrapper'>
                           <Link to={`/country/${item.name}`}>
-                            <button>{item.name}</button>
+                            <button className='border-btn'>{item.name}</button>
                           </Link>
                         </div>
 

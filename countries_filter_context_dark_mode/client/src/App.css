@@ -114,7 +114,7 @@ span {
 
 .detail-country {
   text-align: center;
-  width: 500px;
+  width: 600px;
   border-radius: 5px;
   background-color: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
@@ -143,4 +143,26 @@ span {
   cursor: pointer;
   margin:50px auto;
   width: 100px;
+}
+
+.border-wrapper {
+
+  display:flex;
+  align-self: center;
+  margin:10px 220px;
+}
+
+.border-btn {
+  background: var(--clr-primary);
+  color: var(--clr-bcg);
+  padding: 3px;
+  border-radius: 5px;
+  border-color: transparent;
+  text-transform: capitalize;
+  transition: all 0.3s linear;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  
+  width: 150px;
 }
