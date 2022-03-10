@@ -10,15 +10,15 @@ function App() {
 
 
 
-  const addFilterKeywords= (data) => {
+  const addFilterKeywords= (keyword) => {
     
-    if(!filterKeywords.includes(data)) {
-      setfilterKeywords([...filterKeywords,data])
+    if(!filterKeywords.includes(keyword)) {
+      setfilterKeywords([...filterKeywords,keyword])
     }
    
   }
-  const deleteKeyword = (data) => {
-    const newKeywords = filterKeywords.filter((key) => key !== data);
+  const deleteKeyword = (keyword) => {
+    const newKeywords = filterKeywords.filter((key) => key !== keyword);
     setfilterKeywords(newKeywords);
   };
 

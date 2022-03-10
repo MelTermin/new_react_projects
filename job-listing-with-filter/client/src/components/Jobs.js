@@ -32,7 +32,7 @@ useEffect(() => {
     <div className=''>
       <div className="jobs">
       {filteredData.map((d) => {
-        return <Job key={d.id} data={d} setkeywords={setKeywords} />;
+        return <Job key={d.id} data={d} setKeywords={setKeywords} />;
       })}
       </div>
     

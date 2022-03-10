@@ -47,7 +47,7 @@ function Job(props) {
 
     <div className="part2">
       {keywords.map((key, id) => (
-        <span onClick={() => props.setkeywords(key)} key={id}>
+        <span onClick={() => props.setKeywords(key)} key={id}>
           {key}
         </span>
       ))}
