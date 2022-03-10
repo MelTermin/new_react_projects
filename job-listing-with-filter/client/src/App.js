@@ -1,27 +1,45 @@
 import './App.css';
-import JobList from './components/JobList';
+import data from "./data.json"
+import Jobs from './components/Jobs';
 import React,{useState, useEffect} from "react"
+import FilterList from './components/FilterList';
 
 function App() {
-  const [data,setData]=useState([]);
+ 
+  const [filterKeywords, setfilterKeywords] = useState([]);
 
-  useEffect(() => {
-    fetch('data.json')
-    .then(res => res.json())
-    .then(data => {
-     setData(data)
-    })
-  }, [])
+
+
+  const addFilterKeywords= (data) => {
+    
+    if(!filterKeywords.includes(data)) {
+      setfilterKeywords([...filterKeywords,data])
+    }
+   
+  }
+  const deleteKeyword = (data) => {
+    const newKeywords = filterKeywords.filter((key) => key !== data);
+    setfilterKeywords(newKeywords);
+  };
+
+  const clearAll = () => {
+    setfilterKeywords([]);
+  };
 
   return (
     <div className="App">
      <div className="green-header"></div>
+    {filterKeywords.length>0 && <FilterList 
+          keywords={filterKeywords}
+          removeKeywords={deleteKeyword}
+          clearAll={clearAll}/>}
      <div className='job-card-wrapper'>
-      {data.map((item)=> {
-        return (
-          <JobList key={item.id} {...item}/>
-        )
-      })}
+       <Jobs
+          keywords={filterKeywords}
+          data={data}
+          setKeywords={addFilterKeywords}
+       />
+
      </div>
 
     </div>
