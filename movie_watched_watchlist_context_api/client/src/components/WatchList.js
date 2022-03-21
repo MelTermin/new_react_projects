@@ -5,9 +5,9 @@ function WatchList() {
   const {watchList}=useContext(MovieContext)
   return (
     <div>
-      {watchList.map((item)=> {
+      {watchList.map((item,index)=> {
       return(
-        <div>
+        <div key={index}>
            <img src={`https://image.tmdb.org/t/p/w200${item.poster_path}`} alt={`${item.title} Poster`}/>
         </div>
       )

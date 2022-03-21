@@ -1,9 +1,19 @@
-import React,{useContext} from 'react'
+import React,{useContext,useState} from 'react'
 import MovieContext from '../context/MovieProvider'
 
 function MovieList(movie) {
 
-  const {addtoWatchList}=useContext(MovieContext)
+  const {addtoWatchList,watchList,addtoWatchedList,watchedList}=useContext(MovieContext)
+
+  //if the movie that I added on the watch listarray is there
+  let storedMovie= watchList.find(element => element.id === movie.id)
+
+  let storedWatchedMovie=watchedList.find(element =>element.id === movie.id)
+
+  //I will disable the button
+  const watchListDisabled= storedMovie ? true : false
+  const watchedDisabled = storedWatchedMovie ? true : false;
+  
    
   return (
     <div className='result-card'>
@@ -18,8 +28,8 @@ function MovieList(movie) {
           <h4>{movie.release_date}</h4>
         </div>
         <div className='controls'>
-          <button className='btn' onClick={() => addtoWatchList(movie)}>Add To Watch List</button>
-          <button className='btn'>Add To Watched List</button>
+          <button className='btn' disabled={watchListDisabled}   onClick={() => addtoWatchList(movie)}>Add To Watch List</button>
+          <button className='btn' disabled={watchedDisabled} onClick={()=>addtoWatchedList(movie)}>Add To Watched List</button>
         </div>
 
       </div>

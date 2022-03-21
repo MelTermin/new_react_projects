@@ -8,6 +8,8 @@ export const MovieProvider = ({children}) => {
   const [movies,setMovies]=useState([]);
   const [loading,setLoading]=useState(true);
   const [watchList,setWatchList]=useState([]);
+  const [watchedList,setWatchedList]=useState([]);
+
 
   const fetchMovies= async() => {
     
@@ -32,25 +34,56 @@ export const MovieProvider = ({children}) => {
 
   }
 
+
+
   const addtoWatchList= (movie) => {
     if(!movie) {
       setWatchList([])
     } else {
       const newWatchList= [...watchList, movie]
       setWatchList(newWatchList)
+      // saveToLocalStorage(newWatchList)
+    
     }
 
   }
 
+  const addtoWatchedList =(movie) => {
+    if(!movie) {
+      setWatchedList([])
+    } else {
+      const newWatchedList= [...watchedList, movie]
+      setWatchedList(newWatchedList)
+      // saveToLocalStorage(newWatchList)
+    
+    }
+
+  }
+
+  // const saveToLocalStorage =(items) => {
+  //   localStorage.setItem('watch-list', JSON.stringify(items))
+  // }
+
   useEffect(()=>{
     fetchMovies()
     addtoWatchList()
+    addtoWatchedList()
 
   },[searchTerm])
 
+  // useEffect(() => {
+	// 	const movieWatchList = JSON.parse(
+	// 		localStorage.getItem('watch-list')
+	// 	);
+
+	// 	if (movieWatchList) {
+	// 		setWatchList(movieWatchList);
+	// 	}
+	// }, []);
+
 
   return (
-    <MovieContext.Provider value={{movies,loading,setSearchTerm,searchTerm,fetchMovies,addtoWatchList,watchList,setWatchList}}>
+    <MovieContext.Provider value={{movies,loading,setSearchTerm,searchTerm,fetchMovies,addtoWatchList,watchList,setWatchList,addtoWatchedList,watchedList,setWatchedList}}>
 
       {children}
     </MovieContext.Provider>

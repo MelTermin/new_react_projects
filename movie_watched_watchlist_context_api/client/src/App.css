@@ -150,3 +150,7 @@ margin-right: 10px;
   background-color: #1aa762;
   opacity: 1;
 }
+.btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
