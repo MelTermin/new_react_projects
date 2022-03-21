@@ -54,36 +54,34 @@ export const MovieProvider = ({children}) => {
     } else {
       const newWatchedList= [...watchedList, movie]
       setWatchedList(newWatchedList)
-      // saveToLocalStorage(newWatchList)
+   
     
     }
 
   }
 
-  // const saveToLocalStorage =(items) => {
-  //   localStorage.setItem('watch-list', JSON.stringify(items))
-  // }
+  const removeWatchList = (id)=> {
+   
+  return watchList.filter((item) => item.id !== id);
+
+   
+  }
+
+
 
   useEffect(()=>{
     fetchMovies()
     addtoWatchList()
     addtoWatchedList()
+    removeWatchList()
 
   },[searchTerm])
 
-  // useEffect(() => {
-	// 	const movieWatchList = JSON.parse(
-	// 		localStorage.getItem('watch-list')
-	// 	);
 
-	// 	if (movieWatchList) {
-	// 		setWatchList(movieWatchList);
-	// 	}
-	// }, []);
 
 
   return (
-    <MovieContext.Provider value={{movies,loading,setSearchTerm,searchTerm,fetchMovies,addtoWatchList,watchList,setWatchList,addtoWatchedList,watchedList,setWatchedList}}>
+    <MovieContext.Provider value={{movies,loading,setSearchTerm,searchTerm,fetchMovies,addtoWatchList,watchList,setWatchList,addtoWatchedList,watchedList,setWatchedList,removeWatchList}}>
 
       {children}
     </MovieContext.Provider>
