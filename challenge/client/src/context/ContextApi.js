@@ -5,6 +5,7 @@ const UserContext = createContext();
 export const UserProvider = ({children}) => {
   const [user,setUser]=useState([]);
   const [name,setName]=useState("");
+ 
 
 
   const fetchUser= async()=> {
@@ -14,11 +15,15 @@ export const UserProvider = ({children}) => {
         const data= await response.json();
         console.log("data",data)
         setUser(data.results)
+
+
+      
+       
       } else {
         const searchUserName = user.filter((item) =>
         item.name.first.toLowerCase().includes(name.toLowerCase())
       );
-      setUser(searchUserName)
+        setUser(searchUserName)
       }
 
 
@@ -28,8 +33,15 @@ export const UserProvider = ({children}) => {
 
   }
 
+  const newD= user.map((item)=> {
+    return item.nat
+  })
+  //console.log(newD)
+ 
+
   useEffect(()=> {
     fetchUser()
+
   },[name])
 
 
@@ -37,7 +49,7 @@ export const UserProvider = ({children}) => {
 
 
   return (
-    <UserContext.Provider value={{user,setUser,name,setName}}>
+    <UserContext.Provider value={{user,setUser,name,setName,newD}}>
 
       {children}
     </UserContext.Provider>
