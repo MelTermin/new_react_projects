@@ -62,9 +62,11 @@ export const MovieProvider = ({children}) => {
 
   const removeWatchList = (id)=> {
    
-  return watchList.filter((item) => item.id !== id);
+    const newFavouriteList = watchList.filter(
+			(item) => item.id !== id
+		);
 
-   
+   setWatchList(newFavouriteList)
   }
 
 
@@ -74,6 +76,7 @@ export const MovieProvider = ({children}) => {
     addtoWatchList()
     addtoWatchedList()
     removeWatchList()
+  
 
   },[searchTerm])
 

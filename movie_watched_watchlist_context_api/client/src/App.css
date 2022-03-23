@@ -155,22 +155,25 @@ margin-right: 10px;
   opacity: 0.5;
 }
 
-.movie-card .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
+.watchlist-wrapper {
+  
+  display:flex;
+  flex-wrap: wrap;
+  padding: 10px 40px;
 }
 
-.movie-grid {
-  display:flex;
-
-  flex-direction: column;
-
-  
+.overlay {
+  text-align: center;
+  max-width: 30em;
+  width: 20em;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  margin: 70px 70px;
+  padding: 10px;
+  background: white;
+  color:black;
+ 
 }
 
 

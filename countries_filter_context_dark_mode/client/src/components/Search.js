@@ -1,5 +1,6 @@
 import React,{useContext,useState} from 'react'
 import CountriesContext from "../context/ContextApi"
+import UserContext from "../context/ContextApi"
 
 function Search() {
   const { searchTerm, setSearchTerm,setCountries } = useContext(CountriesContext);

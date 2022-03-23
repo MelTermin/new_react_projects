@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+* {
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  width: 100%;
+  transition: all 0.3s linear;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+form {
+  padding: 2rem 5rem;
+}
+
+form input {
+  width: 300px;
+  height: 30px;
+  border: 2px solid rgb(193, 198, 207);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  font-size: 16px;
+  font-family: sans-serif;
+  width: 1200px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  margin:0px 80px;
+}
+
+.styled-table thead tr {
+  background-color: #327f87;
+  color:white;
+  text-align: center;
+}
+
+.styled-table th, .styled-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.styled-table tbody tr {
+  border-bottom:  1px solid #dddddd;
+
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
