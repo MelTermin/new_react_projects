@@ -26,6 +26,8 @@ nav ul {
 
 form {
   padding: 2rem 5rem;
+  display:flex;
+  flex-direction: column;
 }
 
 form input {
@@ -35,6 +37,15 @@ form input {
   border-radius: 5px;
   padding: 10px;
 }
+
+select {
+  width: 100px;
+  height: 30px;
+  border: 2px solid rgb(193, 198, 207);
+  border-radius: 5px;
+  padding: 0px;
+}
+
 
 .styled-table {
   border-collapse: collapse;

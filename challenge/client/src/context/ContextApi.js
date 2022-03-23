@@ -33,10 +33,6 @@ export const UserProvider = ({children}) => {
 
   }
 
-  const newD= user.map((item)=> {
-    return item.nat
-  })
-  //console.log(newD)
  
 
   useEffect(()=> {
@@ -49,7 +45,7 @@ export const UserProvider = ({children}) => {
 
 
   return (
-    <UserContext.Provider value={{user,setUser,name,setName,newD}}>
+    <UserContext.Provider value={{user,setUser,name,setName,fetchUser}}>
 
       {children}
     </UserContext.Provider>
