@@ -38,8 +38,12 @@ form input {
   padding: 10px;
 }
 
+form label {
+  margin-top: 10px;
+}
+
 select {
-  width: 100px;
+  width: 24.5%;
   height: 30px;
   border: 2px solid rgb(193, 198, 207);
   border-radius: 5px;
@@ -168,4 +172,20 @@ img {
 }
 
 
+.page-item {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 40px 5px;
+}
 
+.page-btn {
+  width: 2rem;
+  height: 2rem;
+  background: hsl(205, 90%, 76%);
+  border-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0.5rem;
+  transition: all 0.3s linear;
+}

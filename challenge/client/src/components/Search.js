@@ -48,6 +48,7 @@ function Search() {
 
   return (
       <form>
+         <label>Search by Name:</label>
         <input type="text" placeholder='Please enter a name' value={name} onChange={(e)=>setName(e.target.value)} />
         <label>Choose a nationality:</label>
         <select onChange={handleOption}>
