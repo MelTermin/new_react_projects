@@ -1,10 +1,29 @@
-import React,{useContext} from 'react'
+import React,{useContext,useState} from 'react'
 import UserContext from "../context/ContextApi"
+import Modal from './Modal';
 
 function UserList() {
-  const { user } = useContext(UserContext);
+  const { user,setUser } = useContext(UserContext);
+  const [modal,setModal]=useState(false);
+  const [newData,setNewData]=useState([])
   
+  const deleteUser= (id) => {
+    
+    if (window.confirm("Are you sure you want to delete your user info?")){
+      const newList = user.filter((item) => item.login.uuid !== id);
+      setUser(newList);
+      }
+ 
+  }
 
+  const openModal= (id) => {
+    const specificUser= user.filter((item)=> {
+     return item.login.uuid ===id
+    })
+    setModal(true)
+    setNewData(specificUser)
+    
+  }
 
   return (
     <div>
@@ -29,8 +48,8 @@ function UserList() {
                 <td>{new Date (item.dob.date).toLocaleDateString("en-US")}</td>
                 <td>{item.nat}</td>
                 <td>
-                    <button className="btn-look">Look</button>
-                    <button className="btn-delete"  >Delete</button>
+                    <button className="btn btn-view" onClick={()=>openModal(item.login.uuid)}>View</button>
+                    <button className="btn btn-delete" onClick={(()=>deleteUser(item.login.uuid))}>Delete</button>
                 </td>
                 
               </tr>
@@ -38,6 +57,7 @@ function UserList() {
           })}
         </tbody>
       </table>
+      {modal && <Modal setModal={setModal} data={newData}/>}
     </div>
   )
 }
